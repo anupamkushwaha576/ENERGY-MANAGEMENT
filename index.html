@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energy Management </title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand brand-mobile" href="#dashboard">Energy Management</a>
+        <nav>
+          <a class="nav-link active" href="#dashboard" data-view="dashboard"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z" /></svg></span>Dashboard</a>
+          <a class="nav-link" href="#devices" data-view="devices"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="2" /><path d="M11 18.5h2" /></svg></span>Devices</a>
+          <a class="nav-link" href="#insights" data-view="insights"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19V11M12 19V5M19 19v-8" /></svg></span>Insights</a>
+          <a class="nav-link" href="#settings" data-view="settings"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z" /><path d="m19.4 15 .1.1a2 2 0 1 1-2.8 2.8l-.1-.1a2 2 0 0 0-3.4 1.4v.2a2 2 0 1 1-4 0v-.2a2 2 0 0 0-3.4-1.4l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A2 2 0 0 0 3.7 12a2 2 0 0 0-.1-.8 2 2 0 1 1 2.8-2.8l.1.1A2 2 0 0 0 9.9 7V6.8a2 2 0 1 1 4 0V7a2 2 0 0 0 3.4 1.4l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1A2 2 0 0 0 20.3 12a2 2 0 0 0-.1.8 2 2 0 0 0-.8 2.2Z" /></svg></span>Settings</a>
+        </nav>
+      </aside>
+
+      <div class="main-column">
+        <header class="topbar">
+          <a class="brand" href="#dashboard">Energy Management </a>
+          <a class="top-settings" href="#settings" data-view="settings">Settings</a>
+        </header>
+
+        <main class="main-content">
+          <section class="view" id="dashboard-view">
+            <h1>Dashboard</h1>
+            <div class="metric-grid">
+              <article class="card metric-card">
+                <div class="metric-heading"><span>Total Energy Usage</span><span class="green-icon">ϟ</span></div>
+                <strong>250.01 kWh</strong><span class="trend"> Energy save 5%</span>
+              </article>
+              <article class="card metric-card">
+                <div class="metric-heading"><span>Energy Cost</span><span class="green-icon">₹</span></div>
+                <strong>₹75.01</strong><span class="trend"> Energy save 3% </span>
+              </article>
+            </div>
+            <div class="dashboard-grid">
+              <article class="card chart-card">
+                <div class="card-heading"><h2>Energy Usage Over Time</h2><div class="segmented"><button class="selected" data-period="day">Day</button><button data-period="week">Week</button></div></div>
+                <div class="line-chart" role="img" aria-label="Energy usage chart">
+                  <div class="y-labels"><span>8</span><span>6</span><span>4</span><span>2</span><span>0</span></div>
+                  <svg viewBox="0 0 600 220" preserveAspectRatio="none" aria-hidden="true">
+                    <g class="grid-lines"><path d="M30 10H590M30 55H590M30 100H590M30 145H590M30 190H590"/><path d="M30 10V190M142 10V190M254 10V190M366 10V190M478 10V190M590 10V190"/></g>
+                    <path class="chart-line" d="M30 157 C70 151 92 141 142 145 S210 118 254 130 S330 72 366 65 S438 83 478 98 S548 126 590 143"/>
+                  </svg>
+                  <div class="x-labels"><span>12 AM</span><span>6 AM</span><span>12 PM</span><span>6 PM</span><span>11 PM</span></div>
+                </div>
+              </article>
+              <article class="card distribution-card">
+                <h2>Energy Distribution</h2>
+                <div class="donut-wrap"><div class="donut"><div class="donut-hole"></div></div><span class="slice-number n1">15</span><span class="slice-number n2">20</span><span class="slice-number n3">40</span><span class="slice-number n4">25</span></div>
+                <div class="legend"><span><i class="dot orange"></i>Electronics</span><span><i class="dot peach"></i>Lighting</span><span><i class="dot coral"></i>Appliances</span><span><i class="dot yellow"></i>Heating</span></div>
+              </article>
+            </div>
+          </section>
+
+          
+
+          <section class="view hidden" id="devices-view" aria-labelledby="device-usage-title">
+              <h2 class="device-usage-title" id="device-usage-title">Device Usage</h2>
+              <div class="devices-grid">
+                <article class="card device-card">
+                  <div class="device-title"><span class="device-icon" aria-hidden="true">❄</span><h2> ROOM 1</h2><button class="status on" type="button">on</button></div>
+                  <p>Usage: 2.5 kWh</p>
+                </article>
+                <article class="card device-card">
+                  <div class="device-title"><span class="device-icon" aria-hidden="true">▣</span><h2>ROOM 2</h2><button class="status on" type="button">on</button></div>
+                  <p>Usage: 1.2 kWh</p>
+                </article>
+                <article class="card device-card">
+                  <div class="device-title"><span class="device-icon" aria-hidden="true">▣</span><h2>ROOM 3</h2><button class="status off" type="button">off</button></div>
+                  <p>Usage: 0.8 kWh</p>
+                </article>
+                <article class="card device-card">
+                  <div class="device-title"><span class="device-icon" aria-hidden="true">▣</span><h2>ROOM 4</h2><button class="status on" type="button">on</button></div>
+                  <p>Usage: 0.5 kWh</p>
+                </article>
+              </div>
+          </section>
+
+          <section class="view hidden" id="insights-view">
+            <h1 class="compact-title">Energy Insights</h1>
+            <div class="insights-grid">
+              <article class="card insight-card"><h2>Peak Usage Times</h2><p>Weekdays from 6 PM to 9 PM</p><p>Weekends from 2 PM to 5 PM</p></article>
+              <article class="card insight-card"><h2>Energy-Saving Opportunities</h2><p>Reduce AC usage during peak hours</p><p>Use energy-efficient appliances</p><p>Improve home insulation</p></article>
+            </div>
+          </section>
+
+          <section class="view hidden" id="settings-view">
+            <h1>Settings</h1>
+            <article class="card preferences-card">
+              <h2>Preferences</h2>
+              <label class="preference-row">Enable notifications <input class="switch" type="checkbox" checked /></label>
+              <label class="preference-row">Theme <select><option>Light</option><option>Dark</option></select></label>
+              <label class="preference-row">Currency <select><option selected>INR</option><option>USD</option><option>EUR</option><option>GBP</option></select></label>
+              <label class="preference-row">Notification Frequency <select><option>Daily</option><option>Weekly</option><option>Never</option></select></label>
+              <label class="preference-row">Enable household comparison <input class="switch" type="checkbox" /></label>
+              <div class="goal-row"><label for="energy-goal">Energy Goal</label><div><input id="energy-goal" type="range" min="100" max="500" value="300" /><span><output id="goal-value">300</output><br />kWh/month</span></div></div>
+            </article>
+          </section>
+        </main>
+
+        <footer>© 2026 Energy Management  by Prarambh. All rights reserved.</footer>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
